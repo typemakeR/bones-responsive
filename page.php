@@ -1,56 +1,60 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix">
+			<div id="content">
+				
+				<div id="inner-content" class="wrap clearfix">
 			
-				<div id="main" class="col620 left clearfix" role="main">
-
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<div id="main" class="col620 left first clearfix" role="main">
 					
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						
-						<header>
+						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 							
-							<h1 class="page-title"><?php the_title(); ?></h1>
+							<header>
+								
+								<h1 class="page-title"><?php the_title(); ?></h1>
+								
+								<p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?>.</p>
 							
-							<p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?>.</p>
+							</header> <!-- end article header -->
 						
-						</header> <!-- end article header -->
-					
-						<section class="post_content clearfix">
-							<?php the_content(); ?>
-					
-						</section> <!-- end article section -->
+							<section class="post_content clearfix">
+								<?php the_content(); ?>
 						
-						<footer>
-			
-							<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
+							</section> <!-- end article section -->
 							
-						</footer> <!-- end article footer -->
+							<footer>
 					
-					</article> <!-- end article -->
+								<?php the_tags('<p class="tags"><span class="tags-title">Tags:</span> ', ', ', '</p>'); ?>
+								
+							</footer> <!-- end article footer -->
+						
+						</article> <!-- end article -->
+						
+						<?php comments_template(); ?>
+						
+						<?php endwhile; ?>		
+						
+						<?php else : ?>
+						
+						<article id="post-not-found">
+						    <header>
+						    	<h1>Not Found</h1>
+						    </header>
+						    <section class="post_content">
+						    	<p>Sorry, but the requested resource was not found on this site.</p>
+						    </section>
+						    <footer>
+						    </footer>
+						</article>
+						
+						<?php endif; ?>
 					
-					<?php comments_template(); ?>
+					</div> <!-- end #main -->
+    				
+					<?php get_sidebar(); // sidebar 1 ?>
 					
-					<?php endwhile; ?>		
-					
-					<?php else : ?>
-					
-					<article id="post-not-found">
-					    <header>
-					    	<h1>Not Found</h1>
-					    </header>
-					    <section class="post_content">
-					    	<p>Sorry, but the requested resource was not found on this site.</p>
-					    </section>
-					    <footer>
-					    </footer>
-					</article>
-					
-					<?php endif; ?>
-			
-				</div> <!-- end #main -->
-    
-				<?php get_sidebar(); // sidebar 1 ?>
+				</div> <!-- end #inner-content -->
     
 			</div> <!-- end #content -->
 
