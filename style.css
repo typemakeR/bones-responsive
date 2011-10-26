@@ -434,8 +434,8 @@ body {}
 	
 	/* layout & column defaults */
 	*[class^="col"] { display: inline; float: left; position: relative;
-		margin-left: 2.1276596%;   /* 20px */ 
-		margin-right: 2.1276596%;  /* 20px */
+		margin-left: 1.0638298%;   /* 10px */ 
+		margin-right: 1.0638298%%;  /* 10px */
 	}
 	
 	/* floats */
@@ -443,8 +443,8 @@ body {}
 	.right { float: right; }
 	
 	/* default styles & fixes */
-	#main { margin-left: 0; } /* fixes alignment (defaulted at col620) */
-	#sidebar1 { margin-right: 0; } /* fixes alignment (defaulted at col300) */
+	.first { margin-left: 0; } /* fixes alignment (defaulted at col620) */
+	.last { margin-right: 0; } /* fixes alignment (defaulted at col300) */
 
 /*********************
 HEADER SYTLES
