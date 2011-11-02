@@ -63,6 +63,11 @@
 		
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 		
+		<!--[if lt IE 9]>
+    		<!-- ie stylesheet -->
+    		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/ie.css">	
+		<![endif]-->
+		
 	</head>
 	
 	<body <?php body_class(); ?>>
