@@ -127,7 +127,9 @@ nav[role=navigation] {}
 				
 				nav[role=navigation] .menu ul li:first-child a {}
 				
-		nav[role=navigation] .menu ul li.current-menu-item a, .nav ul li.current_page_item a {}
+		nav[role=navigation] .menu ul li.current-menu-item a, 
+		nav[role=navigation] .menu ul li.current_page_item a,
+		nav[role=navigation] .menu ul li.current-page-ancestor a {}
 		
 		nav[role=navigation] .menu ul li ul.sub-menu, nav[role=navigation] .menu ul li ul.children {}
 			nav[role=navigation] .menu ul li ul li a {}
