@@ -13,6 +13,10 @@ License URI: http://www.gnu.org/copyleft/gpl.html
 Media Queries Developed by: Andy Clarke & the 320 & Up Extension
 URL: http://stuffandnonsense.co.uk/projects/320andup/
 
+Check out this plugin by Robert Rourke wich makes setting up
+a select input on mobile as your navigation a breeze:
+http://wordpress.org/extend/plugins/dropdown-menus/
+
 THIS FILE IS FOR RESPONSIVE DESIGNS & REPLACES THE STYLE.CSS FILE
 IN THE THEME ROOT. THIS IS PRETTY EXPIRIMENTAL SO BE WARNED.
 
@@ -362,7 +366,7 @@ footer[role=contentinfo] {}
 /******************************************************************
 DESKTOP & JUST BIGGER THAN AN iPAD
 This is your standard iPad size or average tablet size. It's also
-a decent size for 
+a decent size for desktop users.
 ******************************************************************/
 @media only screen and (min-width: 768px) {
 
@@ -419,7 +423,7 @@ want to style a page via body class? go ahead
 	.col220 { width: 23.404255%; } /* width 220px / grid_3  */
 	.col300 { width: 31.914894%; } /* width 300px / grid_4  */
 	.col380 { width: 40.425532%; } /* width 380px / grid_5  */
-	.col480 { width: 51.06383%;  } /* width 480px / grid_6  */
+	.col460 { width: 51.06383%;  } /* width 460px / grid_6  */
 	.col540 { width: 57.446809%; } /* width 540px / grid_7  */
 	.col620 { width: 65.957447%; } /* width 620px / grid_8  */
 	.col700 { width: 74.468085%; } /* width 700px / grid_9  */
@@ -466,7 +470,7 @@ nav[role=navigation] {}
 			nav[role=navigation] .menu ul li a {}
 				nav[role=navigation] .menu ul li a:hover { }
 				nav[role=navigation] .menu ul li:first-child a {}
-		nav[role=navigation] .menu ul li.current-menu-item a, .nav ul li.current_page_item a {}
+		nav[role=navigation] .menu ul li.current-menu-item a, nav[role=navigation] .menu ul li.current_page_item a {}
 		nav[role=navigation] .menu ul li ul.sub-menu, nav[role=navigation] .menu ul li ul.children {}
 			nav[role=navigation] .menu ul li ul li a {}
 				nav[role=navigation] .menu ul li ul li a:hover {}
