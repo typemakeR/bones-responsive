@@ -18,8 +18,8 @@ if ( is_readable($locale_file) ) require_once($locale_file);
 // Cleaning up the Wordpress Head
 function bones_head_cleanup() {
 	// remove header links
-	// remove_action( 'wp_head', 'feed_links_extra', 3 );                    // Category Feeds
-	// remove_action( 'wp_head', 'feed_links', 2 );                          // Post and Comment Feeds
+	// remove_action( 'wp_head', 'feed_links_extra', 3 );                 // Category Feeds
+	// remove_action( 'wp_head', 'feed_links', 2 );                       // Post and Comment Feeds
 	remove_action( 'wp_head', 'rsd_link' );                               // EditURI link
 	remove_action( 'wp_head', 'wlwmanifest_link' );                       // Windows Live Writer
 	remove_action( 'wp_head', 'index_rel_link' );                         // index link
@@ -91,17 +91,48 @@ function bones_theme_support() {
 	add_filter( 'get_search_form', 'bones_wpsearch' );
 	
 
- 
+class bones_walker extends Walker_Nav_Menu {
+
+	function start_el(&$output, $item, $depth, $args) {
+		global $wp_query;
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+		$class_names = $value = '';
+
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+		$class_names = ' class="' . esc_attr( $class_names ) . '"';
+
+		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
+
+		$item_output = $args->before;
+		$item_output .= '<a'. $attributes .'>';
+		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+		$item_output .= '<br /><span class="sub">' . $item->description . '</span>';
+		$item_output .= '</a>';
+		$item_output .= $args->after;
+
+		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+	}
+}	
+
+
 function bones_main_nav() {
 	// display the wp3 menu if available
-    wp_nav_menu( 
-    	array( 
+	$walker = new bones_walker;
+    	wp_nav_menu(array( 
     		'menu' => 'main_nav', /* menu name */
     		'theme_location' => 'main_nav', /* where in the theme it's assigned */
     		'container_class' => 'menu clearfix', /* container class */
-    		'fallback_cb' => 'bones_main_nav_fallback' /* menu fallback */
-    	)
-    );
+    		'fallback_cb' => 'bones_main_nav_fallback', /* menu fallback */
+			'walker' => $walker /* customizes the output of the menu */
+    	));
 }
 
 function bones_footer_links() { 
