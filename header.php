@@ -1,6 +1,6 @@
 <!doctype html>  
 
-<!--[if IEMobile 7 ]> <html <?php language_attributes(); ?>class="no-js iem7"> <![endif]-->
+<!--[if IEMobile 7 ]> <html <?php language_attributes(); ?> class="no-js iem7"> <![endif]-->
 <!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="no-js ie6 oldie"> <![endif]-->
 <!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="no-js ie7 oldie"> <![endif]-->
 <!--[if IE 8 ]>    <html <?php language_attributes(); ?> class="no-js ie8 oldie"> <![endif]-->
@@ -10,30 +10,9 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		
-		<title><?php
-		/*
-		 * Print the <title> tag based on what is being viewed.
-		 */
-		global $page, $paged;
+		<title><?php wp_title(''); ?></title>
 		
-		wp_title( '-', true, 'right' );
-		
-		// Add the blog name.
-		bloginfo( 'name' );
-		
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) )
-			echo " - $site_description";
-		
-		// Add a page number if necessary:
-		if ( $paged >= 2 || $page >= 2 )
-			echo ' - ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
-		
-		?></title>
-		
-		<meta name="description" content="">
-		<meta name="author" content="">
+		<!-- meta tags should be handled by SEO plugin. I reccomend (http://yoast.com/wordpress/seo/) -->
 		
 		<!-- mobile optimized -->
 		<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -45,14 +24,14 @@
 		<!-- icons & favicons (for more: http://themble.com/support/adding-icons-favicons/) -->
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 
-		<!-- default stylesheet -->
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/normalize.css">		
+		<!-- normalize, mixins, & mobile stylesheet -->
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/base.css">		
 		
 		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-		<script>window.jQuery || document.write(unescape('%3Cscript src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery-1.6.2.min.js"%3E%3C/script%3E'))</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write(unescape('%3Cscript src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 		
-		<!-- modernizr -->
+		<!-- modernizr (without media query polyfill) -->
 		<script src="<?php echo get_template_directory_uri(); ?>/library/js/modernizr.full.min.js"></script>
 		
   		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
@@ -61,10 +40,11 @@
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
 		
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+		<!-- responsive stylesheet for those browsers that can read it -->
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/style.css" media="(min-width:481px)">	
 		
-		<!--[if lt IE 9]>
-    		<!-- ie stylesheet -->
+		<!-- load all styles for IE -->
+		<!--[if (lt IE 9) & (!IEMobile)]>
     		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/ie.css">	
 		<!--[endif]-->
 		
@@ -74,7 +54,7 @@
 	
 		<div id="container">
 			
-			<header role="banner">
+			<header role="banner" class="header">
 			
 				<div id="inner-header" class="wrap clearfix">
 				
@@ -84,7 +64,7 @@
 					<!-- if you'd like to use the site description you can un-comment it below -->
 					<?php // bloginfo('description'); ?>
 					
-					<nav role="navigation">
+					<nav role="navigation" class="nav">
 						<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 					</nav>
 				
