@@ -1,4 +1,4 @@
-			<footer role="contentinfo">
+			<footer role="contentinfo" class="footer">
 			
 				<div id="inner-footer" class="wrap clearfix">
 					
@@ -17,6 +17,7 @@
 		<!-- scripts are now optimized via Modernizr.load -->	
 		<script src="<?php echo get_template_directory_uri(); ?>/library/js/scripts.js"></script>
 		
+		<!-- prompt for Google Chrome Frame for IE6 users -->
 		<!--[if lt IE 7 ]>
   			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
   			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
