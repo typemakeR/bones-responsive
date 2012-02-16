@@ -21,7 +21,7 @@ Modernizr.load([
 
 
 // as the page loads, call these scripts
-$(document).ready(function() {
+jQuery(document).ready(function($) {
 	
 	// add all your scripts here
 	
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 
 // HTML5 Fallbacks for older browsers
-$(function() {
+jQuery(function($) {
     // check placeholder browser support
     if (!Modernizr.input.placeholder) {
         // set placeholder values

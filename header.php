@@ -21,24 +21,11 @@
 		<!-- icons & favicons (for more: http://themble.com/support/adding-icons-favicons/) -->
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 
-		<!-- normalize, mixins, & mobile stylesheet -->
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/base.css">		
-		
-		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-		
-		<!-- modernizr (without media query polyfill) -->
-		<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/modernizr.custom.min.js"></script>
-		
   		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 		
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
-		
-		<!-- responsive stylesheet for those browsers that can read it -->
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/style.css" media="(min-width:481px)">	
 		
 		<!-- load all styles for IE -->
 		<!--[if (lt IE 9) & (!IEMobile)]>
