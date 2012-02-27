@@ -4,7 +4,7 @@
 			
 				<div id="inner-content" class="wrap clearfix">
 			
-					<div id="main" class="col620 left first clearfix" role="main">
+					<div id="main" class="eightcol clearfix" role="main">
 					
 						<?php if (is_category()) { ?>
 							<h1 class="archive_title h2">
@@ -44,7 +44,7 @@
 							
 							</header> <!-- end article header -->
 						
-							<section class="post_content">
+							<section class="post-content">
 							
 								<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
 							
@@ -80,7 +80,7 @@
 						    <header>
 						    	<h1><?php _e("No Posts Yet", "bonestheme"); ?></h1>
 						    </header>
-						    <section class="post_content">
+						    <section class="post-content">
 						    	<p><?php _e("Sorry, What you were looking for is not here.", "bonestheme"); ?></p>
 						    </section>
 						    <footer>

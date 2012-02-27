@@ -19,7 +19,7 @@ single-bookmarks.php
 			
 				<div id="inner-content" class="wrap clearfix">
 			
-					<div id="main" class="col620 left first clearfix" role="main">
+					<div id="main" class="eightcol clearfix" role="main">
 					
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						
@@ -33,7 +33,7 @@ single-bookmarks.php
 							
 							</header> <!-- end article header -->
 						
-							<section class="post_content clearfix">
+							<section class="post-content clearfix">
 								
 								<?php the_content(); ?>
 						
@@ -57,7 +57,7 @@ single-bookmarks.php
 						    <header>
 						    	<h1>Not Found</h1>
 						    </header>
-						    <section class="post_content">
+						    <section class="post-content">
 						    	<p>Sorry, but the requested resource was not found on this site.</p>
 						    </section>
 						    <footer>

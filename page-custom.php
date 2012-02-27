@@ -10,7 +10,7 @@ Template Name: Custom Page Example
 			
 				<div id="inner-content" class="wrap clearfix">
 			
-					<div id="main" class="col620 left first clearfix" role="main">
+					<div id="main" class="eightcol clearfix" role="main">
 					
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						
@@ -24,7 +24,7 @@ Template Name: Custom Page Example
 							
 							</header> <!-- end article header -->
 						
-							<section class="post_content">
+							<section class="post-content">
 								<?php the_content(); ?>
 						
 							</section> <!-- end article section -->
@@ -47,7 +47,7 @@ Template Name: Custom Page Example
 						    <header>
 						    	<h1>Not Found</h1>
 						    </header>
-						    <section class="post_content">
+						    <section class="post-content">
 						    	<p>Sorry, but the requested resource was not found on this site.</p>
 						    </section>
 						    <footer>

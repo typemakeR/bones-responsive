@@ -4,7 +4,7 @@
 			
 				<div id="inner-content" class="wrap clearfix">
 			
-					<div id="main" class="col700 left first clearfix" role="main">
+					<div id="main" class="ninecol clearfix" role="main">
 					
 						<h1 class="archive_title"><span>Search Results for:</span> <?php echo esc_attr(get_search_query()); ?></h1>
 					
@@ -20,7 +20,7 @@
 							
 							</header> <!-- end article header -->
 						
-							<section class="post_content">
+							<section class="post-content">
 								<?php the_excerpt('<span class="read-more">Read more on "'.the_title('', '', false).'" &raquo;</span>'); ?>
 						
 							</section> <!-- end article section -->
@@ -55,7 +55,7 @@
 						    <header>
 						    	<h1>No Results Found</h1>
 						    </header>
-						    <section class="post_content">
+						    <section class="post-content">
 						    	<p>Sorry, but the requested resource was not found on this site.</p>
 						    </section>
 						    <footer>
@@ -66,7 +66,7 @@
 					
 					</div> <!-- end #main -->
     				
-    				<div id="sidebar1" class="sidebar col220 right last">
+    				<div id="sidebar1" class="sidebar twocol last">
     					
     					<?php get_search_form(); ?>
     				
