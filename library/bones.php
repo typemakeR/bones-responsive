@@ -45,11 +45,11 @@ function bones_queue_high_js_and_css() {
       wp_enqueue_script( 'comment-reply' );
     }
 
-		// scripts are now optimized via Modernizr.load
+	//adding scripts file in the footer
     wp_register_script( 'bones-js', get_template_directory_uri() . '/library/js/scripts.js', array( 'modernizr', 'jquery' ), '2012-02-15-1537', true );
     wp_enqueue_script( 'bones-js' );
 
-		// normalize, mixins, & mobile stylesheet
+	// register mobile stylesheet
     wp_register_style( 'bones-base', get_template_directory_uri() . '/library/css/base.css', array(), '2011-11-04T15:38', 'all' );
     wp_enqueue_style( 'bones-base' );
   }
@@ -60,13 +60,13 @@ function bones_queue_high_js_and_css() {
 // loading responsive scripts and styles
 function bones_queue_low_js_and_css() {
   if (!is_admin()) {
-		// responsive stylesheet for those browsers that can read it
+	// responsive stylesheet for those browsers that can read it
     wp_register_style( 'bones-responsive', get_template_directory_uri() . '/library/css/style.css', array(), '2011-11-04T15:38', '(min-width:481px)' );
     wp_enqueue_style( 'bones-responsive' );
   }
 }
 	// enqueue responsive scripts and styles
-	add_action('wp_enqueue_scripts', 'bones_queue_low_js_and_css', 100);
+	add_action('wp_enqueue_scripts', 'bones_queue_low_js_and_css', 999);
 
 // Fixing the Read More in the Excerpts
 // This removes the annoying […] to a Read More link
