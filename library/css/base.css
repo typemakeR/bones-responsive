@@ -494,13 +494,6 @@ span.amp {
   font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif;
   font-style: italic; }
 
-/* adding proper formatting */
-p {
-  -webkit-hyphens: auto;
-  -epub-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto; }
-
 /* text alignment */
 .text-left {
   text-align: left; }
@@ -551,6 +544,14 @@ Be careful with these since they can
 really slow down your CSS. Don't overdue it.
 *********************/
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include boxSizing(border-box); */
+/*********************
+BOX SHADOW
+*********************/
+/* @include boxShadow(0 0 4px #444); */
 /*********************
 BUTTONS
 *********************/
