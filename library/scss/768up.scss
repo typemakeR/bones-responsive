@@ -96,7 +96,10 @@ LAYOUT & GRID STYLES
 	}
 	
 	/* default styles & fixes */
-	.last  { margin-right: 0; } /* fixes margin */
+	.last  { 
+		margin-right: 0; 
+		float: right;
+	}
 
 /*********************
 HEADER SYTLES
