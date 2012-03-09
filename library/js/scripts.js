@@ -15,13 +15,13 @@ Modernizr.load([
     // Let's see if we need to load selectivizr
     test : Modernizr.borderradius,
     // Modernizr.load loads selectivizr and Respond.js for IE6-8
-    nope : ['libs/selectivizr-min.js']
+    nope : ['libs/selectivizr-min.js']  /* you may need to hardcode this url as it will fail */
 	}
 ]);
 
 
 // as the page loads, call these scripts
-jQuery(document).ready(function($) {
+$(document).ready(function($) {
 	
 	// add all your scripts here
 	
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 
 
 // HTML5 Fallbacks for older browsers
-jQuery(function($) {
+$(function($) {
     // check placeholder browser support
     if (!Modernizr.input.placeholder) {
         // set placeholder values
