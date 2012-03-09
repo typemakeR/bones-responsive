@@ -12,6 +12,12 @@ Author: Eddie Machado
 BONES CHANGE LOG & HISTORY
 ******************************************************************/
 
+/* v1.11 more updates */
+- changed scss folder to sass
+- fixes scripts.js issues
+- fixes deprecated author info call w/ get_the_author_meta('display_name')
+- updated new image replacement hack: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+
 /* v1.11 update */
 - changed post_content to post-content for consistency
 - reworked LESS files w/ nesting
